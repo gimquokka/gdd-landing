@@ -34,7 +34,7 @@ const Title = styled.p`
 
 const SubTitle = styled.p`
   font-size: 1.8rem;
-  letter-spacing: -0.2rem;
+  letter-spacing: -0.15rem;
   color: ${GREY[600]};
   line-height: 140%;
 `;
