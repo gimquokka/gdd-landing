@@ -37,4 +37,5 @@ const SubTitle = styled.p`
   letter-spacing: -0.15rem;
   color: ${GREY[600]};
   line-height: 140%;
+  word-break: keep-all;
 `;
