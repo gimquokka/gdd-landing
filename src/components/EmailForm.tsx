@@ -44,4 +44,5 @@ const Text = styled.p`
   padding: 0.2rem;
   font-size: 1rem;
   color: ${GREY[500]};
+  line-height: 200%;
 `;
