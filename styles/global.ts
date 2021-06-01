@@ -17,72 +17,72 @@ const GlobalStyle = createGlobalStyle`
   }
   @media (max-width: 252px) {
     html {
-      font-size: 7px;
+      font-size: 3px;
     }
   }
   @media (min-width: 253px) and (max-width: 270px) {
     html {
-      font-size: 7.5px;
+      font-size: 3.5px;
     }
   }
   @media (min-width: 271px) and (max-width: 288px) {
     html {
-      font-size: 8px;
+      font-size: 4px;
     }
   }
   @media (min-width: 289px) and (max-width: 306px) {
     html {
-      font-size: 8.5px;
+      font-size: 4.5px;
     }
   }
   @media (min-width: 307px) and (max-width: 324px) {
     html {
-      font-size: 9px;
+      font-size: 5px;
     }
   }
   @media (min-width: 325px) and (max-width: 342px) {
     html {
-      font-size: 9.5px;
+      font-size: 5.5px;
     }
   }
   @media (min-width: 343px) and (max-width: 360px) {
     html {
-      font-size: 10px;
+      font-size: 6px;
     }
   }
   @media (min-width: 361px) and (max-width: 375px) {
     html {
-      font-size: 10.416px;
+      font-size: 6.5px;
     }
   }
   @media (min-width: 376px) and (max-width: 378px) {
     html {
-      font-size: 10.5px;
+      font-size: 7px;
     }
   }
   @media (min-width: 379px) and (max-width: 396px) {
     html {
-      font-size: 11px;
+      font-size: 7.5px;
     }
   }
   @media (min-width: 397px) and (max-width: 414px) {
     html {
-      font-size: 11.5px;
+      font-size: 8px;
     }
   }
   @media (min-width: 415px) and (max-width: 432px) {
     html {
-      font-size: 12px;
+      font-size: 8.5px;
     }
   }
   @media (min-width: 433px) and (max-width: 451px) {
     html {
-      font-size: 12.5px;
+      font-size: 9px;
     }
   }
   @media (min-width: 451px) and (max-width: 481px) {
     html {
-      font-size: 13px;
+      font-size: 9.5px;
     }
   }
   /* 
@@ -91,7 +91,7 @@ const GlobalStyle = createGlobalStyle`
   */
   @media (min-width: 481px) and (max-width: 767px) {
     html {
-      font-size: 13.5px;
+      font-size: 10px;
     }
   }
   /* 
@@ -100,7 +100,7 @@ const GlobalStyle = createGlobalStyle`
   */
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     html {
-      font-size: 13.5px;
+      font-size: 12px;
     }
   }
   /* 
@@ -109,7 +109,7 @@ const GlobalStyle = createGlobalStyle`
   */
   @media (min-width: 768px) and (max-width: 1024px) {
     html {
-      font-size: 13.5px;
+      font-size: 12px;
     }
   }
   /* 
