@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
+    min-width: 320px;
     margin: 0;
     font-family: 'Noto Sans KR', sans-serif;
   }
@@ -61,28 +62,28 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   @media (min-width: 379px) and (max-width: 396px) {
-    html {
-      font-size: 7.5px;
+    html {      
+      font-size: 7px;
     }
   }
   @media (min-width: 397px) and (max-width: 414px) {
-    html {
-      font-size: 8px;
+    html {      
+      font-size: 7.2px;
     }
   }
   @media (min-width: 415px) and (max-width: 432px) {
-    html {
-      font-size: 8.5px;
+    html {      
+      font-size: 7.2px;
     }
   }
   @media (min-width: 433px) and (max-width: 451px) {
     html {
-      font-size: 9px;
+      font-size: 7.2px;
     }
   }
   @media (min-width: 451px) and (max-width: 481px) {
     html {
-      font-size: 9.5px;
+      font-size: 7.8px;
     }
   }
   /* 
@@ -91,7 +92,7 @@ const GlobalStyle = createGlobalStyle`
   */
   @media (min-width: 481px) and (max-width: 767px) {
     html {
-      font-size: 10px;
+      font-size: 7.8px;
     }
   }
   /* 
