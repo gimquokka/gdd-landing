@@ -8,7 +8,7 @@ export default function GlobalHeader() {
     <Wrapper>
       <InnerWrapper>
         <Link href="/">
-          <Title>🔎 홈써치</Title>
+          <Title>🏡 토드홈</Title>
         </Link>
       </InnerWrapper>
     </Wrapper>

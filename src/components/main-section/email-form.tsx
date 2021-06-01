@@ -10,7 +10,7 @@ export default function EmailForm() {
         <Button type="submit">신청</Button>
       </Form>
       <Text>
-        신청 시, 홈써치 구독 신청과 개인정보 수집에 동의하는 것으로 간주합니다
+        신청 시, 토드홈 구독 신청과 개인정보 수집에 동의하는 것으로 간주합니다
       </Text>
     </>
   );

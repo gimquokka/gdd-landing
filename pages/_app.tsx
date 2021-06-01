@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>홈써치</title>
+        <title>토드홈</title>
         <link rel="shortcut icon" href="favicon.ico"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link

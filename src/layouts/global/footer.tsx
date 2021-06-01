@@ -6,7 +6,7 @@ export default function GlobalFooter() {
   return (
     <Wrapper>
       <InnerWrapper>
-        <Title>홈써치</Title>
+        <Title>토드홈</Title>
         <Text>개인 맞춤 분양 정보 추천 서비스</Text>
         <Text>문의: swmgdd100@gmail.com</Text>
       </InnerWrapper>
