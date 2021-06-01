@@ -27,6 +27,9 @@ const Input = styled.input`
   background-color: ${GREY[100]};
   border: 1px solid ${GREY[500]};
   border-radius: 0.4rem;
+  @media (max-width: 1024px) {
+    width: 60%;
+  }
 `;
 
 const Button = styled.button`
@@ -45,4 +48,5 @@ const Text = styled.p`
   font-size: 1rem;
   color: ${GREY[500]};
   line-height: 200%;
+  letter-spacing: -1.2px;
 `;

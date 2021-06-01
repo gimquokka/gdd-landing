@@ -52,11 +52,16 @@ const ImageWrapper = styled.div`
   display: flex;
   flex: 1;
   position: relative;
+  @media (max-width: 1024px) {
+    z-index: -1;
+    opacity: 30%;
+    flex: 0;
+  }
 `;
 
 const Img = styled.img`
   width: 30rem;
   position: absolute;
   top: -5rem;
-  right: 0;
+  right: -2rem;
 `;
