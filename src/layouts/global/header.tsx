@@ -1,6 +1,8 @@
 import Link from "next/link";
 import styled from "styled-components";
 
+import { WHITE } from "src/constants/colors";
+
 export default function GlobalHeader() {
   return (
     <Wrapper>
@@ -23,6 +25,7 @@ const Wrapper = styled.header`
   align-items: center;
   justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 8px 0px;
+  background-color: ${WHITE};
 `;
 
 const InnerWrapper = styled.div`
