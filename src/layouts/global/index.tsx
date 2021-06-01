@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import GlobalHeader from "./header";
+import GlobalFooter from "./footer";
 import { LayoutProps } from "..";
 
 export default function GlobalLayout({ children }: LayoutProps) {
@@ -10,6 +11,7 @@ export default function GlobalLayout({ children }: LayoutProps) {
       <Background>
         <Wrapper>{children}</Wrapper>
       </Background>
+      <GlobalFooter />
     </>
   );
 }
