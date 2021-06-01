@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { GREEN, GREY, NAVY, WHITE } from "src/constants/colors";
+import { GREY, NAVY, WHITE } from "src/constants/colors";
 
 export default function Bottom() {
   return (
@@ -33,6 +33,7 @@ const Wrapper = styled.div`
 const Line = styled.div`
   display: flex;
   align-items: baseline;
+  margin-bottom: 0.6rem;
 `;
 
 const Title = styled.p`
@@ -41,6 +42,9 @@ const Title = styled.p`
   font-weight: 500;
   letter-spacing: -0.2rem;
   line-height: 120%;
+  @media (max-width: 1024px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const Emphasize = styled.p`
@@ -49,6 +53,10 @@ const Emphasize = styled.p`
   font-weight: bold;
   line-height: 120%;
   margin: 0 0.8rem;
+  @media (max-width: 1024px) {
+    font-size: 2.1rem;
+    margin: 0 0.5rem;
+  }
 `;
 
 const A = styled.a`
