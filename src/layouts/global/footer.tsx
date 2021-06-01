@@ -15,7 +15,7 @@ export default function GlobalFooter() {
 }
 
 const Wrapper = styled.footer`
-  position: fixed;
+  position: absolute;
   bottom: 0;
   z-index: 100;
   display: flex;

@@ -27,5 +27,5 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 1024px;
   min-height: 100vh;
-  padding: 8rem 2rem 0 2rem;
+  padding: 8rem 2rem 12rem 2rem;
 `;
