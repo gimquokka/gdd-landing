@@ -33,6 +33,9 @@ const InnerWrapper = styled.div`
   max-width: 1024px;
   display: flex;
   padding: 0 2rem;
+  @media (max-width: 1024px) {
+    padding: 0 4rem;
+  }
 `;
 
 const Title = styled.h2`

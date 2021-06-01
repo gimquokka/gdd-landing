@@ -24,6 +24,9 @@ const Wrapper = styled.footer`
   align-items: center;
   justify-content: center;
   background-color: ${LIGHT_GREEN};
+  @media (max-width: 1024px) {
+    height: 14rem;
+  }
 `;
 
 const InnerWrapper = styled.div`
@@ -32,6 +35,9 @@ const InnerWrapper = styled.div`
   display: flex;
   padding: 0 2rem;
   flex-direction: column;
+  @media (max-width: 1024px) {
+    padding: 0 4rem;
+  }
 `;
 
 const Title = styled.p`
