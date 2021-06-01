@@ -6,10 +6,15 @@ import { AppProps } from "next/app";
 import GlobalStyle from "../styles/global";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const DESCRIPTION = "개인 맞춤 분양 정보 추천 서비스";
+
   return (
     <>
       <Head>
         <title>토드홈</title>
+        <meta property="og:title" content={"토드홈"} />
+        <meta name="description" content={DESCRIPTION} />
+        <meta property="og:description" content={DESCRIPTION} />
         <link rel="shortcut icon" href="favicon.ico"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link
