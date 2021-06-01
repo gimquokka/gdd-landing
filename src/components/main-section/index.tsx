@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { GREY } from "src/constants/colors";
-import EmailForm from "./EmailForm";
+import EmailForm from "./email-form";
 
 export default function Main() {
   return (
