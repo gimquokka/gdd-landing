@@ -3,6 +3,7 @@ import Main from "src/components/main-section";
 import Mailing from "src/components/feature/mailing";
 import Recommendation from "src/components/feature/recommendation";
 import NoMissingData from "src/components/feature/no-missing-data";
+import Bottom from "src/components/bottom-section";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Mailing />
       <Recommendation />
       <NoMissingData />
+      <Bottom />
     </GlobalLayout>
   );
 }
