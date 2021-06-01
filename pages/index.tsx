@@ -1,5 +1,10 @@
-import GlobalLayout from "../src/layouts/global";
+import GlobalLayout from "src/layouts/global";
+import Main from "src/components/Main";
 
 export default function Home() {
-  return <GlobalLayout>Hello, World!</GlobalLayout>;
+  return (
+    <GlobalLayout>
+      <Main />
+    </GlobalLayout>
+  );
 }
