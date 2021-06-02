@@ -4,18 +4,29 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ChakraProvider } from "@chakra-ui/react";
-import Router from "next/router";
 
 import GlobalStyle from "../styles/global";
-import initGA from "../src/lib/ga";
+
+const { GA_APP_ID } = process.env;
 
 function MyApp({ Component, pageProps }: AppProps) {
   const DESCRIPTION = "개인 맞춤 분양 정보 추천 서비스";
   const queryClient = new QueryClient();
 
   useEffect(() => {
-    initGA(process.env.GA_APP_ID, Router);
-  });
+    if (process.env.NODE_ENV === "production") {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", GA_APP_ID, {
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        page_title: window.document.title,
+      });
+    }
+  }, []);
 
   return (
     <>
@@ -30,6 +41,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
           rel="stylesheet"
         ></link>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_APP_ID}`}
+        ></script>
       </Head>
       <GlobalStyle />
       <QueryClientProvider client={queryClient}>
