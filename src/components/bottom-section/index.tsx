@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "@chakra-ui/react";
 
 import { GREY, NAVY, WHITE } from "src/constants/colors";
 
@@ -16,7 +17,16 @@ export default function Bottom() {
         <Title>메일로 받아보세요</Title>
       </Line>
       <A href="#">
-        <Button>출시 알림 및 메일링 서비스 신청</Button>
+        <Button
+          bg={NAVY}
+          color={WHITE}
+          size="xl"
+          padding="1rem 2rem"
+          marginTop="1rem"
+          fontSize="1.8rem"
+        >
+          출시 알림 및 메일링 서비스 신청
+        </Button>
       </A>
     </Wrapper>
   );
@@ -61,18 +71,4 @@ const Emphasize = styled.p`
 
 const A = styled.a`
   text-decoration: none;
-`;
-
-const Button = styled.button`
-  display: flex;
-  align-items: center;
-  margin: 2rem 0;
-  padding: 1rem 2rem;
-  margin-left: 1rem;
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: ${WHITE};
-  background-color: ${NAVY};
-  border: none;
-  border-radius: 0.4rem;
 `;

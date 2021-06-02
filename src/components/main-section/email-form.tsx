@@ -1,8 +1,9 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { Button } from "@chakra-ui/react";
 
 import useEmailList from "src/hooks/useEmail";
-import { WHITE, GREEN, GREY } from "src/constants/colors";
+import { WHITE, GREY, NAVY } from "src/constants/colors";
 
 export default function EmailForm() {
   const [email, setEmail] = useState<string>("");
@@ -28,7 +29,17 @@ export default function EmailForm() {
           onChange={handleInputChange}
           required
         />
-        <Button type="submit">신청</Button>
+        <Button
+          type="submit"
+          bg={NAVY}
+          color={WHITE}
+          size="xl"
+          padding="0.6rem 1.2rem"
+          marginLeft="1rem"
+          fontSize="1.8rem"
+        >
+          신청
+        </Button>
       </Form>
       <Text>
         신청 시, 토드홈 구독 신청과{" "}
@@ -55,17 +66,6 @@ const Input = styled.input`
   @media (max-width: 1024px) {
     width: 60%;
   }
-`;
-
-const Button = styled.button`
-  padding: 0.6rem 1.2rem;
-  margin-left: 1rem;
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: ${WHITE};
-  background-color: ${GREEN};
-  border: none;
-  border-radius: 0.4rem;
 `;
 
 const Text = styled.p`
