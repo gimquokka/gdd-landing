@@ -4,29 +4,27 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ChakraProvider } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
-import GlobalStyle from "../styles/global";
+import * as gtag from "src/utils/gtag";
+import GlobalStyle from "styles/global";
 
 const { GA_APP_ID } = process.env;
 
 function MyApp({ Component, pageProps }: AppProps) {
   const DESCRIPTION = "개인 맞춤 분양 정보 추천 서비스";
   const queryClient = new QueryClient();
+  const router = useRouter();
 
   useEffect(() => {
-    if (process.env.NODE_ENV === "production") {
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        window.dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", GA_APP_ID, {
-        page_location: window.location.href,
-        page_path: window.location.pathname,
-        page_title: window.document.title,
-      });
-    }
-  }, []);
+    const handleRouteChange = (url: URL) => {
+      gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>
