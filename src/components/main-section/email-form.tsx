@@ -1,12 +1,33 @@
+import { useState } from "react";
 import styled from "styled-components";
 
+import useEmailList from "src/hooks/useEmail";
 import { WHITE, GREEN, GREY } from "src/constants/colors";
 
 export default function EmailForm() {
+  const [email, setEmail] = useState<string>("");
+  const { addNewEmail } = useEmailList();
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    addNewEmail(email);
+    setEmail("");
+  };
+
   return (
     <>
-      <Form>
-        <Input type="email" placeholder="이메일을 입력해주세요" required />
+      <Form onSubmit={handleSubmit}>
+        <Input
+          type="email"
+          placeholder="이메일을 입력해주세요"
+          value={email}
+          onChange={handleInputChange}
+          required
+        />
         <Button type="submit">신청</Button>
       </Form>
       <Text>
