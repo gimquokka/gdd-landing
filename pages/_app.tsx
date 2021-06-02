@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Head from "next/head";
 import { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ChakraProvider } from "@chakra-ui/react";
+import Router from "next/router";
 
 import GlobalStyle from "../styles/global";
+import initGA from "../src/lib/ga";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const DESCRIPTION = "개인 맞춤 분양 정보 추천 서비스";
   const queryClient = new QueryClient();
+
+  useEffect(() => {
+    initGA(process.env.GA_APP_ID, Router);
+  });
 
   return (
     <>
