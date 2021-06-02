@@ -1,12 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import Head from "next/head";
 import { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ChakraProvider } from "@chakra-ui/react";
-import { useRouter } from "next/router";
 
-import * as gtag from "src/utils/gtag";
 import GlobalStyle from "styles/global";
 
 const { GA_APP_ID } = process.env;
@@ -14,17 +12,6 @@ const { GA_APP_ID } = process.env;
 function MyApp({ Component, pageProps }: AppProps) {
   const DESCRIPTION = "개인 맞춤 분양 정보 추천 서비스";
   const queryClient = new QueryClient();
-  const router = useRouter();
-
-  useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      gtag.pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
 
   return (
     <>
@@ -39,10 +26,27 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
           rel="stylesheet"
         ></link>
+        {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_APP_ID}`}
-        ></script>
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (process.env.NODE_ENV === 'production') {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_APP_ID}', {
+                  page_location: window.location.href,
+                  page_path: window.location.pathname,
+                  page_title: window.document.title,
+                });
+              }
+          `,
+          }}
+        />
       </Head>
       <GlobalStyle />
       <QueryClientProvider client={queryClient}>
