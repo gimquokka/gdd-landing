@@ -15,7 +15,7 @@ export default function Bottom() {
         <Emphasize>토드홈을 통해 부동산 정보를</Emphasize>
         <Title>메일로 받아보세요</Title>
       </Line>
-      <A href="/">
+      <A href="#">
         <Button>출시 알림 및 메일링 서비스 신청</Button>
       </A>
     </Wrapper>
