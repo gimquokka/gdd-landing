@@ -2,11 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import Head from "next/head";
 import { AppProps } from "next/app";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import GlobalStyle from "../styles/global";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const DESCRIPTION = "개인 맞춤 분양 정보 추천 서비스";
+  const queryClient = new QueryClient();
 
   return (
     <>
@@ -23,9 +25,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         ></link>
       </Head>
       <GlobalStyle />
-      <Main>
-        <Component {...pageProps} />
-      </Main>
+      <QueryClientProvider client={queryClient}>
+        <Main>
+          <Component {...pageProps} />
+        </Main>
+      </QueryClientProvider>
     </>
   );
 }
