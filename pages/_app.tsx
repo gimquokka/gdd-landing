@@ -5,12 +5,18 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ChakraProvider } from "@chakra-ui/react";
+import { createInstance, HackleProvider } from "@hackler/react-sdk";
 
 import GlobalStyle from "styles/global";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const DESCRIPTION = "개인 맞춤 분양 정보 추천 서비스";
   const queryClient = new QueryClient();
+  let hackleClient;
+  const { HACKLE_SDK_KEY } = process.env;
+  if (process.browser && HACKLE_SDK_KEY) {
+    hackleClient = createInstance(HACKLE_SDK_KEY);
+  }
 
   return (
     <>
@@ -54,13 +60,25 @@ mixpanel.init("469713190bffbad622db5ba31ddf0d02");`,
         />
       </Head>
       <GlobalStyle />
-      <QueryClientProvider client={queryClient}>
-        <ChakraProvider>
-          <Main>
-            <Component {...pageProps} />
-          </Main>
-        </ChakraProvider>
-      </QueryClientProvider>
+      {hackleClient ? (
+        <HackleProvider hackleClient={hackleClient}>
+          <QueryClientProvider client={queryClient}>
+            <ChakraProvider>
+              <Main>
+                <Component {...pageProps} />
+              </Main>
+            </ChakraProvider>
+          </QueryClientProvider>
+        </HackleProvider>
+      ) : (
+        <QueryClientProvider client={queryClient}>
+          <ChakraProvider>
+            <Main>
+              <Component {...pageProps} />
+            </Main>
+          </ChakraProvider>
+        </QueryClientProvider>
+      )}
     </>
   );
 }
