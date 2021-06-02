@@ -28,6 +28,5 @@ const ImageWrapper = styled.div`
 `;
 
 const Img = styled.img`
-  width: 90%;
-  height: fit-content;
+  width: fit-content;
 `;
