@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Head from "next/head";
 import { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ChakraProvider } from "@chakra-ui/react";
 
 import GlobalStyle from "../styles/global";
 
@@ -26,9 +27,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <GlobalStyle />
       <QueryClientProvider client={queryClient}>
-        <Main>
-          <Component {...pageProps} />
-        </Main>
+        <ChakraProvider>
+          <Main>
+            <Component {...pageProps} />
+          </Main>
+        </ChakraProvider>
       </QueryClientProvider>
     </>
   );
