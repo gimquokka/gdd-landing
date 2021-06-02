@@ -7,8 +7,6 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import GlobalStyle from "styles/global";
 
-const { GA_APP_ID } = process.env;
-
 function MyApp({ Component, pageProps }: AppProps) {
   const DESCRIPTION = "개인 맞춤 분양 정보 추천 서비스";
   const queryClient = new QueryClient();
@@ -29,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_APP_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=G-CC0P1V2YX7`}
         />
         <script
           dangerouslySetInnerHTML={{
@@ -38,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${GA_APP_ID}', {
+                gtag('config', 'G-CC0P1V2YX7', {
                   page_location: window.location.href,
                   page_path: window.location.pathname,
                   page_title: window.document.title,
