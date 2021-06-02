@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Button } from "@chakra-ui/react";
 
-import { GREY, NAVY, WHITE } from "src/constants/colors";
+import { GREY, NAVY, WHITE, SKY_BLUE } from "src/constants/colors";
 
 export default function Bottom() {
   return (
@@ -19,6 +19,7 @@ export default function Bottom() {
       <A href="#">
         <Button
           bg={NAVY}
+          _hover={{ bg: SKY_BLUE }}
           color={WHITE}
           size="xl"
           padding="1rem 2rem"

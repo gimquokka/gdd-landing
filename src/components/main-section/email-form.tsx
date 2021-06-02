@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Button } from "@chakra-ui/react";
 
 import useEmailList from "src/hooks/useEmail";
-import { WHITE, GREY, NAVY } from "src/constants/colors";
+import { WHITE, GREY, NAVY, SKY_BLUE } from "src/constants/colors";
 
 export default function EmailForm() {
   const [email, setEmail] = useState<string>("");
@@ -32,6 +32,7 @@ export default function EmailForm() {
         <Button
           type="submit"
           bg={NAVY}
+          _hover={{ bg: SKY_BLUE }}
           color={WHITE}
           size="xl"
           padding="0.6rem 1.2rem"
