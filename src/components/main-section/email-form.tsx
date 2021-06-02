@@ -31,7 +31,11 @@ export default function EmailForm() {
         <Button type="submit">신청</Button>
       </Form>
       <Text>
-        신청 시, 토드홈 구독 신청과 개인정보 수집에 동의하는 것으로 간주합니다
+        신청 시, 토드홈 구독 신청과{" "}
+        <A href="개인정보처리방침.txt" target="_blank">
+          개인정보 수집
+        </A>
+        에 동의하는 것으로 간주합니다
       </Text>
     </>
   );
@@ -71,3 +75,5 @@ const Text = styled.p`
   line-height: 200%;
   letter-spacing: -1.2px;
 `;
+
+const A = styled.a``;
