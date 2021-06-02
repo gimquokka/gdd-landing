@@ -9,7 +9,7 @@ export default function Main() {
       <ContentWrapper>
         <Title>너무 많고 복잡한</Title>
         <Title>분양 정보는 이제 그만!</Title>
-        <SubTitle>토드홈를 통해 나에게 꼭 필요한 정보만 받아보세요</SubTitle>
+        <SubTitle>토드홈을 통해 나에게 꼭 필요한 정보만 받아보세요</SubTitle>
         <EmailForm />
       </ContentWrapper>
       <ImageWrapper>
